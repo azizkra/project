@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+
+<main>
+    <section class="hero" id="hero" style=" height:50vh;">
+        <div class="heroText">
+            <h1 class="news-detail-title text-white mt-lg-5 mb-lg-4" data-aos="zoom-in" data-aos-delay="300">
+                {{posts.title}}
+            </h1>
+        </div>
+
+        <div class="videoWrapper">
+            <img src="{% static 'images/portfolio/head_photo2.jpg' %}" class="img-fluid news-detail-image" alt="">
+        </div>
+
+        <div class="overlay"></div>
+    </section>
+    <!-- المسار  -->
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><a href="{% url 'activities' %}">Activities</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">Detail</li>
+            </ol>
+        </nav>
+    </div>
+
+    <section class="news-detail section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-10 mx-auto">
+                    <h2 class="mb-3" data-aos="fade-up">{{posts.title|capfirst}}</h2>
+
+
+
+                    <div class="clearfix my-4 mt-lg-0 mt-5">
+                        <div class="col-md-6 float-md-end mb-3 ms-md-3" data-aos="fade-up">
+                            <figure class="figure">
+                                <img src="{{posts.post_photo.url}}" class="img-fluid news-image" alt="">
+
+                                <!-- <figcaption class="figure-caption text-end">A caption for the above image.</figcaption> -->
+                            </figure>
+                        </div>
+                        <p class="me-4" data-aos="fade-up">{{posts.p1}}</p>
+                        <p data-aos="fade-up">{{posts.p2}}</p>
+
+                        <p data-aos="fade-up">
+                            {{posts.p3}}
+                        </p>
+
+                        <p data-aos="fade-up">
+                            {{posts.p4}}
+                        </p>
+
+                        <p data-aos="fade-up">
+                            {{posts.p4}}
+                        </p>
+                    </div>
+                    <!-- pymant -->
+                    <section>
+                        <div class="title">
+                            <h3 class="page-title col-md-8" style="margin: 25px 0;">Your onComplete handler</h3>
+                        </div>
+                        <div class="donation__top-nav">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="donation__nav-item" style="margin: 10px;">
+                                        <a href="           " target="_blank">
+                                            <svg xmlns="http://www.w3.org/2000/svg" height="50" viewBox="0 0 50 50"
+                                                fill="none">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M21.8607 9C22.413 9 22.8607 9.44772 22.8607 10V12.3785L27.6146 12.3788V10C27.6146 9.44772 28.0623 9 28.6146 9C29.1669 9 29.6146 9.44772 29.6146 10V12.4606C32.9016 12.9551 35.49 15.6379 35.49 18.9787C35.49 21.0057 34.5372 22.7904 33.0537 23.9911C35.9928 24.9753 38.1439 27.6178 38.1439 30.8006C38.1439 34.8488 34.6643 38.0227 30.5093 38.0227L29.6146 38.0226V40.4C29.6146 40.9523 29.1669 41.4 28.6146 41.4C28.0623 41.4 27.6146 40.9523 27.6146 40.4V38.0225L22.8607 38.0222V40.4C22.8607 40.9523 22.413 41.4 21.8607 41.4C21.3084 41.4 20.8607 40.9523 20.8607 40.4V38.0221L18.566 38.0219C18.5532 38.0219 18.5404 38.0217 18.5277 38.0212C18.5125 38.0219 18.4973 38.0222 18.4819 38.0222H13.5C12.9477 38.0222 12.5 37.5745 12.5 37.0222C12.5 36.47 12.9477 36.0222 13.5 36.0222H17.566V14.3781H13.5C12.9477 14.3781 12.5 13.9304 12.5 13.3781C12.5 12.8258 12.9477 12.3781 13.5 12.3781H18.4819C18.496 12.3781 18.5101 12.3784 18.5241 12.379C18.5381 12.3784 18.5521 12.3781 18.5661 12.3781L20.8607 12.3783V10C20.8607 9.44772 21.3084 9 21.8607 9ZM19.566 14.3782L28.5188 14.3789C31.3258 14.3789 33.49 16.4978 33.49 18.9787C33.49 21.4597 31.3258 23.5786 28.5189 23.5786H19.566V14.3782ZM19.566 25.5786V36.022L28.5888 36.0226C28.5974 36.0224 28.606 36.0222 28.6146 36.0222C28.6233 36.0222 28.6319 36.0224 28.6405 36.0226L30.5093 36.0227C33.6826 36.0227 36.1439 33.6252 36.1439 30.8006C36.1439 27.9761 33.6826 25.5786 30.5093 25.5786H19.566Z"
+                                                    fill="#6B6B6B" />
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M25 45.2C36.1562 45.2 45.2 36.1562 45.2 25C45.2 13.8438 36.1562 4.8 25 4.8C13.8438 4.8 4.8 13.8438 4.8 25C4.8 36.1562 13.8438 45.2 25 45.2ZM25 47C37.1503 47 47 37.1503 47 25C47 12.8497 37.1503 3 25 3C12.8497 3 3 12.8497 3 25C3 37.1503 12.8497 47 25 47Z"
+                                                    fill="#6B6B6B" />
+                                            </svg>
+                                            <h6>Donate With Crypto</h6>
+                                        </a>
+
+                                    </div>
+                                    <script src="https://commerce.coinbase.com/v1/checkout.js?version=201807"></script>
+
+                                </div>
+
+                                <!-- <div class="col-md-1"></div> -->
+
+                                <!-- paypal -->
+                                <div class="col-md-6">
+                                    <a id="paypal-button-container">
+                                        <!-- <div class="donation__nav-item col-md-5">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
+                                                viewBox="0 0 50 50" fill="none">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M23.8497 4.50801H24.058V2.41634C24.058 2.30128 24.1513 2.20801 24.2663 2.20801H25.733C25.8481 2.20801 25.9413 2.30128 25.9413 2.41634V4.50801H29.183C29.2981 4.50801 29.3913 4.60128 29.3913 4.71634V6.18301C29.3913 6.29807 29.2981 6.39134 29.183 6.39134H23.8497C23.0859 6.39134 22.4913 6.98587 22.4913 7.74967C22.4913 8.51348 23.0859 9.10801 23.8497 9.10801H26.1497C27.9264 9.10801 29.3913 10.573 29.3913 12.3497C29.3913 14.1264 27.9264 15.5913 26.1497 15.5913H25.9413V17.683C25.9413 17.7981 25.8481 17.8913 25.733 17.8913H24.2663C24.1513 17.8913 24.058 17.7981 24.058 17.683V15.5913H20.8163C20.7013 15.5913 20.608 15.4981 20.608 15.383V13.9163C20.608 13.8013 20.7013 13.708 20.8163 13.708H26.1497C26.9135 13.708 27.508 13.1135 27.508 12.3497C27.508 11.5859 26.9135 10.9913 26.1497 10.9913H23.8497C22.073 10.9913 20.608 9.52638 20.608 7.74967C20.608 5.97297 22.073 4.50801 23.8497 4.50801ZM4.50801 22.4913H2.41634C2.30128 22.4913 2.20801 22.3981 2.20801 22.283V16.4106C2.20801 16.3197 2.26695 16.2393 2.35364 16.2119L17.6203 11.3942C17.7546 11.3518 17.8913 11.4521 17.8913 11.5929V13.1269C17.8913 13.2178 17.8324 13.2982 17.7457 13.3256L4.52815 17.4991C4.26813 17.5812 4.09134 17.8224 4.09134 18.0951V20.608H45.283C45.6282 20.608 45.908 20.3282 45.908 19.983V18.0995C45.908 17.8269 45.7313 17.5857 45.4714 17.5036L32.2536 13.3257C32.1669 13.2983 32.108 13.2179 32.108 13.127V11.5929C32.108 11.4521 32.2448 11.3518 32.379 11.3942L47.6457 16.2119C47.7324 16.2393 47.7913 16.3197 47.7913 16.4106V22.283C47.7913 22.3981 47.6981 22.4913 47.583 22.4913H45.4913V41.308H47.583C47.6981 41.308 47.7913 41.4013 47.7913 41.5163V47.583C47.7913 47.6981 47.6981 47.7913 47.583 47.7913H2.41634C2.30128 47.7913 2.20801 47.6981 2.20801 47.583V41.5163C2.20801 41.4013 2.30128 41.308 2.41634 41.308H4.50801V22.4913ZM6.39134 22.4913V41.308H9.10801V22.4913H6.39134ZM10.9913 22.4913V41.308H16.008V22.4913H10.9913ZM17.8913 22.4913V41.308H20.608V22.4913H17.8913ZM22.4913 22.4913V41.308H27.508V22.4913H22.4913ZM29.3913 22.4913V41.308H32.108V22.4913H29.3913ZM33.9913 22.4913V41.308H39.008V22.4913H33.9913ZM40.8913 22.4913V41.308H43.608V22.4913H40.8913ZM4.71634 43.1913C4.37116 43.1913 4.09134 43.4712 4.09134 43.8163V45.283C4.09134 45.6282 4.37116 45.908 4.71634 45.908H45.283C45.6282 45.908 45.908 45.6282 45.908 45.283V43.8163C45.908 43.4712 45.6282 43.1913 45.283 43.1913H4.71634Z"
+                                                    fill="#6B6B6B">
+                    
+                                                </path>
+                                            </svg>
+                                            <h6>Donate With PayPal</h6>
+                                        </div> -->
+                                    </a>
+                                    <script>
+                                        paypal.Buttons({
+                
+                                            style: {
+                                                shape: 'rect',//pill
+                                                label: 'pay',
+                                                height: 50,
+                                            },
+                                            // Sets up the transaction when a payment button is clicked
+                                            createOrder: (data, actions) => {
+                                                return actions.order.create({
+                                                    purchase_units: [{
+                                                        amount: {
+                                                            value: '{{ post.price }}' // Can also reference a variable or function
+                                                        }
+                                                    }]
+                                                });
+                                            },
+                                            // Finalize the transaction after payer approval
+                                            onApprove: (data, actions) => {
+                                                return actions.order.capture().then(function (orderData) {
+                                                    // Successful capture! For dev/demo purposes:
+                                                    console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                                                    const transaction = orderData.purchase_units[0].payments.captures[0];
+                                                    alert(`Transaction ${transaction.status}: ${transaction.id}\n\nSee console for all available details`);
+                                                    // When ready to go live, remove the alert and show a success message within this page. For example:
+                                                    //const element = document.getElementById('paypal-button-container');
+                                                    //element.innerHTML = '<h3>Thank you for your payment!</h3>';
+                                                    // Or go to another URL:  actions.redirect('thank_you.html');
+                                                });
+                                            }
+                                        }).render('#paypal-button-container');
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <!-- <section class="container">
+    
+    <video class="video-fluid">
+        <source src="{{posts.video}}" type="video/mp4">
+    </video>
+        
+</section> -->
+    <br>
+</main>
+{% endblock content %}
