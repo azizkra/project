@@ -93,50 +93,64 @@
 
                                 <!-- paypal -->
                                 <div class="col-md-6">
-                                    <a id="paypal-button-container">
-                                        <!-- <div class="donation__nav-item col-md-5">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
-                                                viewBox="0 0 50 50" fill="none">
-                                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                                    d="M23.8497 4.50801H24.058V2.41634C24.058 2.30128 24.1513 2.20801 24.2663 2.20801H25.733C25.8481 2.20801 25.9413 2.30128 25.9413 2.41634V4.50801H29.183C29.2981 4.50801 29.3913 4.60128 29.3913 4.71634V6.18301C29.3913 6.29807 29.2981 6.39134 29.183 6.39134H23.8497C23.0859 6.39134 22.4913 6.98587 22.4913 7.74967C22.4913 8.51348 23.0859 9.10801 23.8497 9.10801H26.1497C27.9264 9.10801 29.3913 10.573 29.3913 12.3497C29.3913 14.1264 27.9264 15.5913 26.1497 15.5913H25.9413V17.683C25.9413 17.7981 25.8481 17.8913 25.733 17.8913H24.2663C24.1513 17.8913 24.058 17.7981 24.058 17.683V15.5913H20.8163C20.7013 15.5913 20.608 15.4981 20.608 15.383V13.9163C20.608 13.8013 20.7013 13.708 20.8163 13.708H26.1497C26.9135 13.708 27.508 13.1135 27.508 12.3497C27.508 11.5859 26.9135 10.9913 26.1497 10.9913H23.8497C22.073 10.9913 20.608 9.52638 20.608 7.74967C20.608 5.97297 22.073 4.50801 23.8497 4.50801ZM4.50801 22.4913H2.41634C2.30128 22.4913 2.20801 22.3981 2.20801 22.283V16.4106C2.20801 16.3197 2.26695 16.2393 2.35364 16.2119L17.6203 11.3942C17.7546 11.3518 17.8913 11.4521 17.8913 11.5929V13.1269C17.8913 13.2178 17.8324 13.2982 17.7457 13.3256L4.52815 17.4991C4.26813 17.5812 4.09134 17.8224 4.09134 18.0951V20.608H45.283C45.6282 20.608 45.908 20.3282 45.908 19.983V18.0995C45.908 17.8269 45.7313 17.5857 45.4714 17.5036L32.2536 13.3257C32.1669 13.2983 32.108 13.2179 32.108 13.127V11.5929C32.108 11.4521 32.2448 11.3518 32.379 11.3942L47.6457 16.2119C47.7324 16.2393 47.7913 16.3197 47.7913 16.4106V22.283C47.7913 22.3981 47.6981 22.4913 47.583 22.4913H45.4913V41.308H47.583C47.6981 41.308 47.7913 41.4013 47.7913 41.5163V47.583C47.7913 47.6981 47.6981 47.7913 47.583 47.7913H2.41634C2.30128 47.7913 2.20801 47.6981 2.20801 47.583V41.5163C2.20801 41.4013 2.30128 41.308 2.41634 41.308H4.50801V22.4913ZM6.39134 22.4913V41.308H9.10801V22.4913H6.39134ZM10.9913 22.4913V41.308H16.008V22.4913H10.9913ZM17.8913 22.4913V41.308H20.608V22.4913H17.8913ZM22.4913 22.4913V41.308H27.508V22.4913H22.4913ZM29.3913 22.4913V41.308H32.108V22.4913H29.3913ZM33.9913 22.4913V41.308H39.008V22.4913H33.9913ZM40.8913 22.4913V41.308H43.608V22.4913H40.8913ZM4.71634 43.1913C4.37116 43.1913 4.09134 43.4712 4.09134 43.8163V45.283C4.09134 45.6282 4.37116 45.908 4.71634 45.908H45.283C45.6282 45.908 45.908 45.6282 45.908 45.283V43.8163C45.908 43.4712 45.6282 43.1913 45.283 43.1913H4.71634Z"
-                                                    fill="#6B6B6B">
-                    
-                                                </path>
-                                            </svg>
-                                            <h6>Donate With PayPal</h6>
-                                        </div> -->
-                                    </a>
+                                    <script src="https://www.paypal.com/sdk/js?client-id=AXrjomCjZeNzasBrcYeEGP3JBVgmt7MmL6UkptYakLoBUWzLzfuc9xMwB86-DUm3Lm-SAFAqymA4hB6n&currency=USD"></script>
+                                    <a id="paypal-button-container"></a>
                                     <script>
+                                        // Render the PayPal button into #paypal-button-container
                                         paypal.Buttons({
-                
-                                            style: {
-                                                shape: 'rect',//pill
-                                                label: 'pay',
-                                                height: 50,
-                                            },
-                                            // Sets up the transaction when a payment button is clicked
-                                            createOrder: (data, actions) => {
-                                                return actions.order.create({
-                                                    purchase_units: [{
-                                                        amount: {
-                                                            value: '{{ post.price }}' // Can also reference a variable or function
-                                                        }
-                                                    }]
+                                    
+                                            // Call your server to set up the transaction
+                                            createOrder: function (data, actions) {
+                                                return fetch('/demo/checkout/api/paypal/order/create/', {
+                                                    method: 'post'
+                                                }).then(function (res) {
+                                                    return res.json();
+                                                }).then(function (orderData) {
+                                                    return orderData.id;
                                                 });
                                             },
-                                            // Finalize the transaction after payer approval
-                                            onApprove: (data, actions) => {
-                                                return actions.order.capture().then(function (orderData) {
-                                                    // Successful capture! For dev/demo purposes:
+                                    
+                                            // Call your server to finalize the transaction
+                                            onApprove: function (data, actions) {
+                                                return fetch('/demo/checkout/api/paypal/order/' + data.orderID + '/capture/', {
+                                                    method: 'post'
+                                                }).then(function (res) {
+                                                    return res.json();
+                                                }).then(function (orderData) {
+                                                    // Three cases to handle:
+                                                    //   (1) Recoverable INSTRUMENT_DECLINED -> call actions.restart()
+                                                    //   (2) Other non-recoverable errors -> Show a failure message
+                                                    //   (3) Successful transaction -> Show confirmation or thank you
+                                    
+                                                    // This example reads a v2/checkout/orders capture response, propagated from the server
+                                                    // You could use a different API or structure for your 'orderData'
+                                                    var errorDetail = Array.isArray(orderData.details) && orderData.details[0];
+                                    
+                                                    if (errorDetail && errorDetail.issue === 'INSTRUMENT_DECLINED') {
+                                                        return actions.restart(); // Recoverable state, per:
+                                                        // https://developer.paypal.com/docs/checkout/integration-features/funding-failure/
+                                                    }
+                                    
+                                                    if (errorDetail) {
+                                                        var msg = 'Sorry, your transaction could not be processed.';
+                                                        if (errorDetail.description) msg += '\n\n' + errorDetail.description;
+                                                        if (orderData.debug_id) msg += ' (' + orderData.debug_id + ')';
+                                                        return alert(msg); // Show a failure message (try to avoid alerts in production environments)
+                                                    }
+                                    
+                                                    // Successful capture! For demo purposes:
                                                     console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
-                                                    const transaction = orderData.purchase_units[0].payments.captures[0];
-                                                    alert(`Transaction ${transaction.status}: ${transaction.id}\n\nSee console for all available details`);
-                                                    // When ready to go live, remove the alert and show a success message within this page. For example:
-                                                    //const element = document.getElementById('paypal-button-container');
-                                                    //element.innerHTML = '<h3>Thank you for your payment!</h3>';
+                                                    var transaction = orderData.purchase_units[0].payments.captures[0];
+                                                    alert('Transaction ' + transaction.status + ': ' + transaction.id + '\n\nSee console for all available details');
+                                    
+                                                    // Replace the above to show a success message within this page, e.g.
+                                                    // const element = document.getElementById('paypal-button-container');
+                                                    // element.innerHTML = '';
+                                                    // element.innerHTML = '<h3>Thank you for your payment!</h3>';
                                                     // Or go to another URL:  actions.redirect('thank_you.html');
                                                 });
                                             }
+                                    
                                         }).render('#paypal-button-container');
                                     </script>
                                 </div>
