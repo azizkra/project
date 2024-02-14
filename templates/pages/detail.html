@@ -93,7 +93,6 @@
 
                                 <!-- paypal -->
                                 <div class="col-md-6">
-                                    <script src="https://www.paypal.com/sdk/js?client-id=AXrjomCjZeNzasBrcYeEGP3JBVgmt7MmL6UkptYakLoBUWzLzfuc9xMwB86-DUm3Lm-SAFAqymA4hB6n&currency=USD"></script>
                                     <a id="paypal-button-container"></a>
                                     <script>
                                         paypal.Buttons({
@@ -108,7 +107,7 @@
                                                 return actions.order.create({
                                                     purchase_units: [{
                                                         amount: {
-                                                            value: '{{ post.price }}' // Can also reference a variable or function
+                                                            value: 100 // Can also reference a variable or function
                                                         }
                                                     }]
                                                 });
@@ -128,6 +127,7 @@
                                             }
                                         }).render('#paypal-button-container');
                                     </script>
+
                                 </div>
                             </div>
                         </div>
