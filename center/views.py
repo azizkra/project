@@ -56,9 +56,12 @@ def post_detail(request, post):
     return render(request, 'pages/detail.html', context)
 
 # عن المركز
-def about(request):
-
-    return render(request, 'pages/about.html')
+def footer(request):
+    posts = get_object_or_404(Post, status='published' )[:4]
+    context = {
+        'posts': posts,
+    }
+    return render(request, 'parts/footer.html', context)
 
 # صفحة الدعم
 def supportus(request):

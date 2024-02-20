@@ -236,7 +236,7 @@ strong {
 -----------------------------------------*/
 
 .navbar {
-  z-index: 9;
+  z-index: 9999;
   right: 0;
   left: 0;
   padding-top: 15px;
@@ -729,21 +729,45 @@ strong {
   .news-detail-title {
     font-size: 36px;
   }
+  .respoinsev {
+    margin-top: 9rem;
+  }
+  .header-text{
+    font-size: 25px;
+  }
+  .desc-text{
+    font-size: 17px;
+  }
 }
 
 @media screen and (max-width: 360px) {
   h1 {
     font-size: 32px;
   }
+  .respoinsev {
+    margin-top: 9rem;
+  }
 
   .heroText p {
     font-size: 14px;
+  } 
+  .header-text{
+    font-size: 25px;
+  }
+  .desc-text{
+    font-size: 17px;
   }
 }
 
 @media screen and (max-width: 359px) {
   .news-detail-title {
     font-size: 22px;
+  }
+  .header-text{
+    font-size: 25px;
+  }
+  .desc-text{
+    font-size: 17px;
   }
 }
 

@@ -39,7 +39,7 @@ class Post(models.Model):
         return super().save(*aegs, **kwargs)
     
     def get_absolute_url(self):
-        return reverse('center:detail', args=[self.slug])
+        return reverse('center:post_detail', args=[self.slug])
     
 class Contact(models.Model):
     name = models.CharField(max_length=250)

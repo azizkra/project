@@ -155,8 +155,8 @@
                 </div>
 
                 <div class="portfolio-thumb" data-aos="fade-up">
-                    <a href="{% static 'images/portfolio/head_photo3.jpg' %}" class="image-popup">
-                        <img src="{% static 'images/portfolio/head_photo3.jpg' %}" class="img-fluid portfolio-image"
+                    <a href="{% static 'images/portfolio/gaza.webp' %}" class="image-popup">
+                        <img src="{% static 'images/portfolio/gaza.webp' %}" class="img-fluid portfolio-image"
                             alt="">
                     </a>
 
@@ -170,8 +170,8 @@
 
             <div class="col-lg-6 col-12">
                 <div class="portfolio-thumb mt-5 mt-lg-0 mb-5" data-aos="fade-up">
-                    <a href="{% static 'images/portfolio/jusef.jpg' %}" class="image-popup">
-                        <img src="{% static 'images/portfolio/jusef.jpg' %}" class="img-fluid portfolio-image" alt="">
+                    <a href="{% static 'images/portfolio/morning-struggles.webp' %}" class="image-popup">
+                        <img src="{% static 'images/portfolio/morning-struggles.webp' %}" class="img-fluid portfolio-image" alt="">
                     </a>
 
                     <div class="portfolio-info">
@@ -206,12 +206,12 @@
             </div>
             <div class="col-lg-6 col-12 mb-5 mb-lg-0" style="height: 440px;">
                 <div class="news-thumb" data-aos="fade-up" style="height: 100%;">
-                    <a href="{% url 'post_detail' post_id.slug %}" class="news-image-hover news-image-hover-warning">
+                    <a href="{% url 'center:post_detail' post_id.slug %}" class="news-image-hover news-image-hover-warning">
                         <img src="{{post_id.post_photo.url}}" class="img-fluid large-news-image news-image" alt="">
                     </a>
                     <div class="news-text-info">
                         <h5 class="news-title">
-                            <a href="{% url 'post_detail' post_id.slug %}"
+                            <a href="{% url 'center:post_detail' post_id.slug %}"
                                 class="news-title-link">{{post_id.title|capfirst}}</a>
                         </h5>
 
@@ -219,13 +219,16 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 col-12">
+            <style>
+                
+            </style>
+            <div class="col-lg-6 col-12 respoinsev">
 
                 {% for post in posts|slice:2 %}
                 <div class="news-thumb news-two-column d-flex flex-column flex-lg-row" data-aos="fade-up">
                     <div class="news-top w-100">
 
-                        <a href="{% url 'post_detail' post.slug %}" class="news-image-hover news-image-hover-primary">
+                        <a href="{% url 'center:post_detail' post.slug %}" class="news-image-hover news-image-hover-primary">
                             <img src="{{post.post_photo.url}}" class="about-img img-fluid news-image" alt="">
                         </a>
 
@@ -234,7 +237,7 @@
                     <div class="news-bottom w-100">
                         <div class="news-text-info">
                             <h5 class="news-title">
-                                <a href="{% url 'post_detail' post.slug %}"
+                                <a href="{% url 'center:post_detail' post.slug %}"
                                     class="news-title-link">{{post.title|capfirst}}</a>
                             </h5>
                             <span class="text-muted">{{post.p1|safe|truncatewords:"20"}}</span>
@@ -246,13 +249,101 @@
             </div>
 
         </div>
-        <!-- <div class="col-lg-5 col-12 mx-auto">
-            <a class="form-control" href="{% url 'activities' %}">More Activities</a>
-        </div> -->
+        
 
     </div>
 
 </section>
+
+<!-- pymant -->
+<section class="container contact section-padding">
+    <div class="title mb-5">
+        <h3 class="page-title mb-4 text-center" style="margin: 25px 0;">One Dollar Can Change the Life of a Community</h3>
+        
+    </div>
+    <div class="donation__top-nav">
+        <div class="row">
+            <div class="desc col-md-6">
+                <p class="text-muted">One dollar has the power to transform the destiny of an entire community. Your contribution, no matter how small, can ignite significant change and bring hope to those in need. By donating, you're not just offering financial support; you're investing in the well-being and future of a community.</p>
+                <p>Every dollar counts towards providing essential resources such as food, clean water, education, and healthcare. It can empower individuals to break free from the cycle of poverty and build a better life for themselves and their families. Your generosity can create a ripple effect of positivity, inspiring others to join in and make a difference.</p>
+                
+                <p>Together, we can make a profound impact on communities around the world. Your donation is more than just money; it's a lifeline for those facing adversity. Let's come together and be the catalyst for change. Donate now and be a part of something truly transformative.</p>
+            </div>
+            <div class="col-md-6">
+
+            
+                <div class="col-md-12">
+                    <div class="donation__nav-item mb-5" style="margin: 10px;">
+                        <a href="           " target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="50" viewBox="0 0 50 50"
+                                fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.8607 9C22.413 9 22.8607 9.44772 22.8607 10V12.3785L27.6146 12.3788V10C27.6146 9.44772 28.0623 9 28.6146 9C29.1669 9 29.6146 9.44772 29.6146 10V12.4606C32.9016 12.9551 35.49 15.6379 35.49 18.9787C35.49 21.0057 34.5372 22.7904 33.0537 23.9911C35.9928 24.9753 38.1439 27.6178 38.1439 30.8006C38.1439 34.8488 34.6643 38.0227 30.5093 38.0227L29.6146 38.0226V40.4C29.6146 40.9523 29.1669 41.4 28.6146 41.4C28.0623 41.4 27.6146 40.9523 27.6146 40.4V38.0225L22.8607 38.0222V40.4C22.8607 40.9523 22.413 41.4 21.8607 41.4C21.3084 41.4 20.8607 40.9523 20.8607 40.4V38.0221L18.566 38.0219C18.5532 38.0219 18.5404 38.0217 18.5277 38.0212C18.5125 38.0219 18.4973 38.0222 18.4819 38.0222H13.5C12.9477 38.0222 12.5 37.5745 12.5 37.0222C12.5 36.47 12.9477 36.0222 13.5 36.0222H17.566V14.3781H13.5C12.9477 14.3781 12.5 13.9304 12.5 13.3781C12.5 12.8258 12.9477 12.3781 13.5 12.3781H18.4819C18.496 12.3781 18.5101 12.3784 18.5241 12.379C18.5381 12.3784 18.5521 12.3781 18.5661 12.3781L20.8607 12.3783V10C20.8607 9.44772 21.3084 9 21.8607 9ZM19.566 14.3782L28.5188 14.3789C31.3258 14.3789 33.49 16.4978 33.49 18.9787C33.49 21.4597 31.3258 23.5786 28.5189 23.5786H19.566V14.3782ZM19.566 25.5786V36.022L28.5888 36.0226C28.5974 36.0224 28.606 36.0222 28.6146 36.0222C28.6233 36.0222 28.6319 36.0224 28.6405 36.0226L30.5093 36.0227C33.6826 36.0227 36.1439 33.6252 36.1439 30.8006C36.1439 27.9761 33.6826 25.5786 30.5093 25.5786H19.566Z"
+                                    fill="#6B6B6B" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M25 45.2C36.1562 45.2 45.2 36.1562 45.2 25C45.2 13.8438 36.1562 4.8 25 4.8C13.8438 4.8 4.8 13.8438 4.8 25C4.8 36.1562 13.8438 45.2 25 45.2ZM25 47C37.1503 47 47 37.1503 47 25C47 12.8497 37.1503 3 25 3C12.8497 3 3 12.8497 3 25C3 37.1503 12.8497 47 25 47Z"
+                                    fill="#6B6B6B" />
+                            </svg>
+                            <h6>Donate With Crypto</h6>
+                        </a>
+
+                    </div>
+                    <script src="https://commerce.coinbase.com/v1/checkout.js?version=201807"></script>
+
+                </div>
+
+                <!-- <div class="col-md-1"></div> -->
+
+                <!-- paypal -->
+                <div class="col-md-12">
+                    <a id="paypal-button-container"></a>
+                    <style>
+                        #paypal-button-container {
+                            
+                            z-index: 1;
+                        }
+                    </style>
+                    <script>
+                        paypal.Buttons({
+            
+                            style: {
+                                shape: 'rect',//pill
+                                label: 'pay',
+                                height: 50,
+                            },
+                            // Sets up the transaction when a payment button is clicked
+                            createOrder: (data, actions) => {
+                                return actions.order.create({
+                                    purchase_units: [{
+                                        amount: {
+                                            value: 100 // Can also reference a variable or function
+                                        }
+                                    }]
+                                });
+                            },
+                            // Finalize the transaction after payer approval
+                            onApprove: (data, actions) => {
+                                return actions.order.capture().then(function (orderData) {
+                                    // Successful capture! For dev/demo purposes:
+                                    console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                                    const transaction = orderData.purchase_units[0].payments.captures[0];
+                                    alert(`Transaction ${transaction.status}: ${transaction.id}\n\nSee console for all available details`);
+                                    // When ready to go live, remove the alert and show a success message within this page. For example:
+                                    //const element = document.getElementById('paypal-button-container');
+                                    //element.innerHTML = '<h3>Thank you for your payment!</h3>';
+                                    // Or go to another URL:  actions.redirect('thank_you.html');
+                                });
+                            }
+                        }).render('#paypal-button-container');
+                    </script>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 
 <section class=" contact section-padding" id="contact">
     <div class="container">
@@ -263,36 +354,36 @@
                 <h2 class="mb-4 text-center" data-aos="fade-up">Dont' be shy, write to us</h2>
 
                 <form action="#" method="POST" class="contact-form" role="form" data-aos="fade-up">
-                    {% csrf_token %}
                     <div class="row">
                         <div class="col-lg-6 col-6">
                             <label for="name" class="form-label">Name <sup class="text-danger">*</sup></label>
-
+                            
                             <input type="text" name="name" id="name" class="form-control" placeholder="Full name"
-                                required>
+                            required>
                         </div>
-
+                        
                         <div class="col-lg-6 col-6">
                             <label for="email" class="form-label">Email <sup class="text-danger">*</sup></label>
-
+                            
                             <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control"
-                                placeholder="Email address" required>
+                            placeholder="Email address" required>
                         </div>
-
+                        
                         <div class="col-12 my-4">
                             <label for="message" class="form-label">How can we help?</label>
-
+                            
                             <textarea name="message" rows="6" class="form-control" id="message"
-                                placeholder="Tell us about the project" required></textarea>
-
+                            placeholder="Tell us about the project" required></textarea>
+                            
                         </div>
-
+                        {% csrf_token %}
+                        
                         {% if messages %}
-
+                        
                         {% for message in messages %}
                         <div class="alert alert-{{message.tags}}">{{message}}</div>
                         {% endfor %}
-
+                        
                         {% endif %}
 
                     </div>
@@ -312,5 +403,4 @@
     <iframe src="https://maps.google.com/maps?q=Av.+L%C3%BAcio+Costa,+Rio+de+Janeiro+-+RJ,+Brazil&t=&z=13&ie=UTF8&iwloc=&output=embed" class="map-iframe" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 </section> -->
 
-</main>
 {% endblock content %}
