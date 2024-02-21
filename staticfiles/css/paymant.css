@@ -1,0 +1,124 @@
+:root {
+    --white: #ffffff;
+    --whiteBackground: #f7f7f7;
+    --black: #000000;
+    --whitesmoke: #f4f4f4;
+    --lightGray: #ededed;
+    --gold: #ffcb08;
+    --forestGreen: #115c9b;
+    --mediumSeaGreen: #3aaa35;
+    --darkSlateGray: #151822;
+    --silver: #c4c4c4;
+    --darkGray: #5a5a5a;
+  }
+  
+  /* DONATION SECTION */
+  .donation__title {
+    font-family: 'Open Sans';
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 30px;
+  }
+
+  .donation__nav-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 20px 10px;
+    text-align: center;
+    border-radius: 12px;
+    background: #FFF;
+    -webkit-box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.15);
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+  }
+  
+  .donation__nav-item:hover {
+    border: 2px solid var(--forestGreen);
+    /* background-color: var(--forestGreen); */
+  }
+  
+  .donation__nav-item:hover h6 {
+    color: var(--forestGreen);
+  }
+  
+  .donation__nav-item svg path {
+    -webkit-transition: fill 0.3s ease;
+    -o-transition: fill 0.3s ease;
+    transition: fill 0.3s ease;
+  }
+  
+  .donation__nav-item:hover svg path {
+    fill: var(--forestGreen);
+  }
+  
+  .donation__nav-item h6 {
+    font-family: 'Open Sans';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-top: 10px;
+    color: #000;
+    -webkit-transition: color 0.3s ease;
+    -o-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+  }
+  
+  .paymentByCard {
+    padding: 40px 0;
+    background-color: #f7f7f7;
+  }
+  
+  .paymentByCard__title,
+  .bank-transfer__title,
+  .transfer-abroad__title,
+  .pay-crypto__title,
+  .other-patments__title,
+  .reoprting__title {
+    font-family: 'Open Sans';
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 30px;
+  }
+  
+  .donation-card,
+  .bank-transfer__card {
+    border-radius: 12px;
+    background-color: #fff;
+    padding: 20px;
+    max-width: 712px;
+  }
+  
+  .donation-card__price {
+    position: relative;
+    margin: 40px 0;
+  }
+  
+  .donation-card__title,
+  .your-data-form__title,
+  .regular-payment__title {
+    font-family: 'Open Sans';
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 20px;
+  }
+a{
+  text-decoration: none;
+}
